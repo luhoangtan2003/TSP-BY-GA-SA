@@ -89,12 +89,11 @@ class Genetic_Algorithm:
         File = open(Path, 'w')
         File.write("Quá trình tiến hóa di truyền\n\n".upper())
         for i in range(len(self.Log)):
+            File.write(f"Thế hệ thứ {i}:\n")
             if i == 0 or i % 10 == 0:
-                File.write(f"Thế hệ thứ {i}:\n")
                 for Individual in self.Log[i]:
                     File.write(f"    Khoảng cách: {Individual[0]:<30} Chu trình: {Individual[1]}\n")
             else:
-                File.write(f"Thế hệ thứ {i}:\n")
                 File.write("    Dữ liệu về thế hệ này đã được lượt bớt nhằm tiết kiệm tài nguyên\n")
             File.write("\n")
         File.close()
